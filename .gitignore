@@ -1,2 +1,2 @@
-.ssh/id_*
-.tmux/resurrect
+ssh/.ssh/id_*
+tmux/.tmux/resurrect
