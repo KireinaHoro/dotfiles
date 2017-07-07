@@ -37,3 +37,6 @@
 [submodule "vim/.vim"]
 	path = vim/.vim
 	url = git@github.com:KireinaHoro/vim.git
+[submodule "xmonad/.xmonad"]
+	path = xmonad/.xmonad
+	url = git@github.com:KireinaHoro/xmonad-config.git
