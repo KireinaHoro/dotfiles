@@ -34,3 +34,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://git::@github.com/tmux-plugins/tpm
+[submodule "vim/.vim"]
+	path = vim/.vim
+	url = git@github.com:KireinaHoro/vim.git
