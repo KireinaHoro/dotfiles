@@ -29,6 +29,9 @@ pasystray &
 # Fcitx
 fcitx &
 
+# background
+~/.fehbg
+
 if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &
 fi
