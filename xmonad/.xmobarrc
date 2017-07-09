@@ -5,7 +5,7 @@ Config { font = "xft:Source Code Pro for Powerline:size=10:antialias=true,Noto S
         , fgColor = "grey"
         , position = TopW L 100
         , commands = [ Run Weather "ZBAA" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
-                        , Run Network "ens33" ["-L","0","-H","32","--normal","green","--high","red"] 10
+                        , Run Network "enp2s0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                         -- , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
                         , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                         , Run Memory ["-t","Mem: <usedratio>%"] 10
@@ -17,6 +17,6 @@ Config { font = "xft:Source Code Pro for Powerline:size=10:antialias=true,Noto S
         , sepChar = "%"
         , alignSep = "}{"
         -- , template = "%StdinReader% | %cpu% | %memory% * %swap% | %eth0% - %eth1% }{<fc=#ee9a00>%date%</fc> | %uname% | %ZBAA% "
-        , template = "%StdinReader% | %cpu% | %memory% * %swap% | %ens33% }{<fc=#ee9a00>%date%</fc> | %uname% | %ZBAA% "
+        , template = "%StdinReader% | %cpu% | %memory% * %swap% | %enp2s0% }{<fc=#ee9a00>%date%</fc> | %uname% | %ZBAA% "
         }
 
