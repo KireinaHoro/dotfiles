@@ -1,14 +1,11 @@
 #!/bin/sh
 
-# Configure PATH so that we can access our scripts below
-PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
-
 # Configure X
-xsetroot -cursor_name left_ptr &
-xrdb -merge ~/.Xdefaults &
-setxkbmap -option "ctrl:nocaps" &
+xsetroot -cursor_name left_ptr
+xrdb -merge ~/.Xdefaults
+setxkbmap -option "ctrl:nocaps"
 
-# background
+# Set background
 ~/.fehbg
 
 # Start a window compositor. This ensures Google Chrome paints correctly.
@@ -31,10 +28,3 @@ pasystray &
 
 # Fcitx
 fcitx &
-
-if [ -x /usr/bin/nm-applet ] ; then
-   nm-applet --sm-disable &
-fi
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
