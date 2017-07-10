@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --image-bg black --bg-max '/home/jsteward/Pictures/lovelive.jpg' 
+feh  --image-bg black --bg-max '/home/jsteward/.wallpaper.jpg' 
