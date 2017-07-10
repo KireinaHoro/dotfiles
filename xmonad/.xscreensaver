@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.37 for jsteward on Fri Jul  7 19:00:23 2017.
+# Written by xscreensaver-demo 5.36 for jsteward on Mon Jul 10 13:46:10 2017.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
 cycle:		0:10:00
 lock:		True
-lockTimeout:	0:03:00
+lockTimeout:	0:10:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
@@ -17,18 +17,18 @@ demoCommand:	xscreensaver-demo
 prefsCommand:	xscreensaver-demo -prefs
 nice:		10
 memoryLimit:	0
-fade:		True
+fade:		False
 unfade:		False
 fadeSeconds:	0:00:03
 fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
-dpmsEnabled:	False
+dpmsEnabled:	True
 dpmsQuickOff:	True
-dpmsStandby:	0:03:00
-dpmsSuspend:	0:03:00
-dpmsOff:	0:03:00
+dpmsStandby:	0:10:00
+dpmsSuspend:	0:10:00
+dpmsOff:	0:10:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
