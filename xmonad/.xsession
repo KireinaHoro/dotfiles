@@ -21,7 +21,7 @@ numlockx
 xscreensaver -no-splash &
 
 # Start sound server
-#pulseaudio --start --log-target=syslog &
+pulseaudio --start --log-target=syslog &
 
 # Pasystray
 pasystray &
