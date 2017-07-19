@@ -1,1 +1,6 @@
-fcitx: RenderBadPicture (invalid Picture parameter)
+=========================
+FCITX 4.2.9.1 -- Get Signal No.: 11
+Date: try "date -d @1500169209" if you are using GNU date ***
+ProcessID: 19487
+fcitx[0x804920d]
+linux-gate.so.1(__kernel_sigreturn+0x0)[0xb7728b40]
