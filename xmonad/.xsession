@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Configure X
 xsetroot -cursor_name left_ptr
 xrdb -merge ~/.Xdefaults
@@ -21,7 +19,7 @@ numlockx
 xscreensaver -no-splash &
 
 # Start sound server
-pulseaudio --start --log-target=syslog
+dbus-launch pulseaudio --start
 
 # Pasystray
 pasystray &
