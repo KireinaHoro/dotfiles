@@ -91,3 +91,10 @@ if which tmux >/dev/null 2>&1; then
     #if not inside a tmux session, and if no session is started, start a new session
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
+
+# SSH segment
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+    BULLETTRAIN_CUSTOM_MSG="$(echo SSH)"
+    BULLETTRAIN_CUSTOM_BG="magenta"
+    BULLETTRAIN_CUSTOM_FG="white"
+fi
