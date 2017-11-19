@@ -92,12 +92,9 @@ if which tmux >/dev/null 2>&1; then
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
 
-<<<<<<< Updated upstream
 # SSH segment
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
     BULLETTRAIN_CUSTOM_MSG="$(echo SSH)"
     BULLETTRAIN_CUSTOM_BG="magenta"
     BULLETTRAIN_CUSTOM_FG="white"
 fi
-=======
->>>>>>> Stashed changes
