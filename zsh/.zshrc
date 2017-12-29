@@ -1,8 +1,7 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/jsteward/.oh-my-zsh
+export ZSH=/Users/jsteward/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
+# Set name of the theme to load.  Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bullet-train"
@@ -79,10 +78,13 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+if [[ -z "$CONFIG_PROTECT_MASK" ]]; then
+    exec /Users/jsteward/Gentoo/startprefix
+fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /usr/share/autojump/autojump.zsh
+source /Users/jsteward/Gentoo/usr/share/autojump/autojump.zsh
 #source /usr/share/doc/pkgfile/command-not-found.zsh
 
 export BULLETTRAIN_HG_SHOW=false
