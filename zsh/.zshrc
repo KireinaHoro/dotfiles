@@ -85,6 +85,11 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/autojump/autojump.zsh
 #source /usr/share/doc/pkgfile/command-not-found.zsh
 
+# if $WAYLAND_DISPLAY is set, we should set $DISPLAY as well for tools like xsel
+if [ -n ${WAYLAND_DISPLAY+x} -a -z ${DISPLAY+x} ]; then
+    export DISPLAY=:0
+fi
+
 export BULLETTRAIN_HG_SHOW=false
 # TMUX
 if which tmux >/dev/null 2>&1; then
