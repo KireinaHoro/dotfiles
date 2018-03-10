@@ -100,3 +100,17 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
     BULLETTRAIN_CUSTOM_BG="magenta"
     BULLETTRAIN_CUSTOM_FG="white"
 fi
+
+# Gentoo Prefix
+export EPREFIX="${HOME}"/Gentoo
+
+# Go
+export GOPATH=${HOME}/go
+export PATH=${GOPATH}/bin:${PATH}
+
+# Android platform-tools
+export PATH=/usr/local/platform-tools:${PATH}
+
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
