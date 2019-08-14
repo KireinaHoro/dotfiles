@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/jsteward/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,7 @@ ZSH_THEME="bullet-train"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git gpg-agent)
 
 # User configuration
 
@@ -103,3 +103,6 @@ if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
     BULLETTRAIN_CUSTOM_BG="magenta"
     BULLETTRAIN_CUSTOM_FG="white"
 fi
+echo -n Updating GPG startup TTY...\ \ \ \ 
+gpg-connect-agent updatestartuptty /bye
+
