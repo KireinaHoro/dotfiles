@@ -99,3 +99,5 @@ fi
 
 echo -n Updating GPG startup TTY...\ \ \ \ 
 gpg-connect-agent updatestartuptty /bye
+
+zstyle ':completion::complete:*' use-cache 1
