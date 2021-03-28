@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bullet-train"
+ZSH_THEME="candy"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -97,12 +97,7 @@ if which tmux >/dev/null 2>&1; then
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
 
-# SSH segment
-if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-    BULLETTRAIN_CUSTOM_MSG="$(echo SSH)"
-    BULLETTRAIN_CUSTOM_BG="magenta"
-    BULLETTRAIN_CUSTOM_FG="white"
-fi
 echo -n Updating GPG startup TTY...\ \ \ \ 
 gpg-connect-agent updatestartuptty /bye
 
+zstyle ':completion::complete:*' use-cache 1
