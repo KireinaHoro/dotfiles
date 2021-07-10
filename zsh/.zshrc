@@ -49,7 +49,7 @@ ZSH_THEME="candy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gpg-agent)
+plugins=(git)
 
 # User configuration
 
@@ -97,7 +97,8 @@ if which tmux >/dev/null 2>&1; then
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
 
-echo -n Updating GPG startup TTY...\ \ \ \ 
+export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
+echo -n Updating GPG startup TTY...\ \ \ \
 gpg-connect-agent updatestartuptty /bye
 
 zstyle ':completion::complete:*' use-cache 1
