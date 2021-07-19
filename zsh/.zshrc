@@ -1,3 +1,6 @@
+# disable any OS-specific defaults (e.g. NixOS)
+prompt off
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -82,11 +85,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /usr/share/autojump/autojump.zsh
+if [[ -L $HOME/.nix-profile ]]; then
+    source $HOME/.nix-profile/share/autojump/autojump.zsh
+else
+    source /usr/share/autojump/autojump.zsh
+fi
 #source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # if $WAYLAND_DISPLAY is set, we should set $DISPLAY as well for tools like xsel
-if [ -n ${WAYLAND_DISPLAY+x} -a -z ${DISPLAY+x} ]; then
+if [[ -n ${WAYLAND_DISPLAY+x} && -z ${DISPLAY+x} ]]; then
     export DISPLAY=:0
 fi
 
@@ -97,8 +104,10 @@ if which tmux >/dev/null 2>&1; then
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
 
-export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
-echo -n Updating GPG startup TTY...\ \ \ \
-gpg-connect-agent updatestartuptty /bye
+if [[ -z $SSH_CONNECTION ]]; then
+    export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
+    echo -n Updating GPG startup TTY...\ \ \ \
+        gpg-connect-agent updatestartuptty /bye
+fi
 
 zstyle ':completion::complete:*' use-cache 1
