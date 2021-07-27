@@ -1,6 +1,3 @@
-# disable any OS-specific defaults (e.g. NixOS)
-prompt off
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -111,3 +108,7 @@ if [[ -z $SSH_CONNECTION ]]; then
 fi
 
 zstyle ':completion::complete:*' use-cache 1
+
+if command -v direnv; then
+    eval "$(direnv hook zsh)"
+fi
