@@ -98,7 +98,9 @@ export BULLETTRAIN_HG_SHOW=false
 # TMUX
 if which tmux >/dev/null 2>&1; then
     #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
+    case $- in
+        *i*) test -z "$TMUX" && (tmux attach || tmux new-session)
+    esac
 fi
 
 if [[ -z $SSH_CONNECTION ]]; then
