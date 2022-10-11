@@ -3,7 +3,7 @@
 	url = https://git::@github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/.vim"]
 	path = vim/.vim
-	url = git+ssh//git@github.com/KireinaHoro/vim.git
+	url = git+ssh://git@github.com/KireinaHoro/vim.git
 [submodule "xmonad/.xmonad"]
 	path = xmonad/.xmonad
 	url = https://git::@github.com/KireinaHoro/xmonad-config.git
