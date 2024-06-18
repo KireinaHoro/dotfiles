@@ -49,7 +49,7 @@ ZSH_THEME="candy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git gpg-agent)
 
 # User configuration
 
@@ -82,12 +82,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [[ -L $HOME/.nix-profile ]]; then
-    source $HOME/.nix-profile/share/autojump/autojump.zsh
-else
-    source /usr/share/autojump/autojump.zsh
-fi
-#source /usr/share/doc/pkgfile/command-not-found.zsh
+alias ls="ls -G --color=auto"
+
+# per-system variables and settings
+
+case "$(uname -s)" in
+    FreeBSD)
+        source /usr/local/share/autojump/autojump.zsh
+        ;;
+
+    Linux)
+        source /usr/share/autojump/autojump.zsh
+        ;;
+
+    *)
+        echo "Unsupported system; not performing system-specific init"
+        ;;
+esac
 
 # if $WAYLAND_DISPLAY is set, we should set $DISPLAY as well for tools like xsel
 if [[ -n ${WAYLAND_DISPLAY+x} && -z ${DISPLAY+x} ]]; then
@@ -95,7 +106,7 @@ if [[ -n ${WAYLAND_DISPLAY+x} && -z ${DISPLAY+x} ]]; then
 fi
 
 export BULLETTRAIN_HG_SHOW=false
-# TMUX
+# TMUX auto attach
 if which tmux >/dev/null 2>&1; then
     #if not inside a tmux session, and if no session is started, start a new session
     case $- in
@@ -103,10 +114,9 @@ if which tmux >/dev/null 2>&1; then
     esac
 fi
 
-if [[ -z $SSH_CONNECTION ]]; then
-    export SSH_AUTH_SOCK=$(gpgconf --list-dir agent-ssh-socket)
-    echo -n Updating GPG startup TTY...\ \ \ \
-        gpg-connect-agent updatestartuptty /bye
+# disable gpg-agent integration if we are in ssh session
+if [[ -n "$SSH_CONNECTION" ]]; then
+    gnupg_SSH_AUTH_SOCK_by=$$
 fi
 
 zstyle ':completion::complete:*' use-cache 1
