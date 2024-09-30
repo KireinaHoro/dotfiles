@@ -1,2 +1,7 @@
+# do not check in private keys
 ssh/.ssh/id_*
+# or known hosts
+ssh/.ssh/known_hosts
+# managed by nix home-manager
+ssh/.ssh/config
 tmux/.tmux/resurrect
